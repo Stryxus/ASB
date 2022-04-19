@@ -10,6 +10,7 @@
   <Properties>
     <PublisherDisplayName>Stryxus</PublisherDisplayName>
     <DisplayName>Android System Bridge</DisplayName>
+    <Logo>Resources\Images\Logo\PackageLogo.png</Logo>
   </Properties>
 
   <Dependencies>
@@ -23,14 +24,15 @@
 
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
-      <uap:VisualElements  DisplayName="Android System Bridge" Description="Android System Bridge. A streamlined way of customising your Android experience.">
-        <uap:DefaultTile/>
+      <uap:VisualElements  DisplayName="Android System Bridge" Description="Android System Bridge. A streamlined way of customising your Android experience." BackgroundColor="transparent" Square150x150Logo="Resources\Images\Logo\MediumTile.png" Square44x44Logo="Resources\Images\Logo\AppIcon.png">
+        <uap:DefaultTile ShortName="ASB" Square71x71Logo="Resources\Images\Logo\SmallTile.png" Wide310x150Logo="Resources\Images\Logo\WideTile.png" Square310x310Logo="Resources\Images\Logo\LargeTile.png"/>
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="landscape"/>
           <uap:Rotation Preference="portrait"/>
           <uap:Rotation Preference="landscapeFlipped"/>
           <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
-        <uap:LockScreen Notification="badge"/>
+        <uap:LockScreen Notification="badge" BadgeLogo="Resources\Images\Logo\BadgeLogo.png"/>
+        <uap:SplashScreen BackgroundColor="#181818" Image="Resources\Images\Logo\SplashScreen.png"/>
       </uap:VisualElements >
     </Application>
   </Applications>
