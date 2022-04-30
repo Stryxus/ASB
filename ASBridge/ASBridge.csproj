@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-android</TargetFramework>
+    <TargetFramework>net6.0-android30.0</TargetFramework>
     <SupportedOSPlatformVersion>30</SupportedOSPlatformVersion>
     <OutputType>Exe</OutputType>
     <Nullable>enable</Nullable>
@@ -8,5 +8,25 @@
     <ApplicationId>io.stryxus.asbridge</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	<MandroidI18n>Other;West;Rare;Mideast;CJK;</MandroidI18n>
+	<AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+	<AndroidTlsProvider>btls</AndroidTlsProvider>
+	<DebugType>embedded</DebugType>
+	<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TrimMode>link</TrimMode>
+    <AndroidLinkTool>r8</AndroidLinkTool>
+	<BundleAssemblies>True</BundleAssemblies>
+	<RunAOTCompilation>True</RunAOTCompilation>
+	<EnableLLVM>True</EnableLLVM>
+	<AndroidKeyStore>True</AndroidKeyStore>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ASB\Shared\ASB.Shared.csproj" />
+  </ItemGroup>
 </Project>
