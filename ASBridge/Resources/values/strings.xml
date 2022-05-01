@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ASBridge</string>
-    <string name="app_text">Hello, Android!</string>
+    <string name="app_text">This app is currennt placeholder to start the ASBridge service.</string>
+
+	<string name="app_notification_channel_id">543355884326</string>
+	<string name="app_notification_main_title">ASBridge Service</string>
+	<string name="app_notification_main_desc">The service is currently running.</string>
 </resources>
