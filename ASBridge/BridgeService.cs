@@ -10,7 +10,7 @@ using Android;
 
 namespace ASBridge;
 
-[Service(Enabled = true, DirectBootAware = true)]
+[Service(Enabled = true)]
 public class BridgeService : Service
 {
     private (int, Notification?) ForegroundNoteInstance { get; set; }
