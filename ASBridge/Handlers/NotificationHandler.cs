@@ -21,7 +21,7 @@ public static class Notes
         notifMan?.CreateNotificationChannel(new(Application.Context.Resources?.GetString(Resource.String.app_notification_channel_id), new Java.Lang.String("ASBridge"), NotificationImportance.Max)
         {
             LightColor = Color.Black,
-            LockscreenVisibility = NotificationVisibility.Public
+            LockscreenVisibility = NotificationVisibility.Secret
         });
     }
 

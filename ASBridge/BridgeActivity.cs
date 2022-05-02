@@ -1,6 +1,7 @@
 using Android;
 using Android.Content;
 using Android.Content.PM;
+using ASBridge.Receivers;
 
 namespace ASBridge;
 
@@ -13,12 +14,10 @@ public class BridgeActivity : Activity
         base.OnResume();
     }
 
-    private int permcode = 100;
-
     protected override void OnCreate(Bundle? savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-        Notes.Init(); 
+        Notes.Init();
         Intent i = new(this, typeof(BridgeService));
         i.SetFlags(ActivityFlags.NewTask);
         StartForegroundService(i);
