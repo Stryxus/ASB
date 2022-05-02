@@ -28,7 +28,7 @@ public static class Notes
     public static (int, Notification) CreateNote(string title, string desc, Bitmap? largeIcon, int smallIcon, bool isOngoing)
     {
         Notification.Builder builder = new(Application.Context, Application.Context.Resources?.GetString(Resource.String.app_notification_channel_id));
-        builder.SetContentIntent(PendingIntent.GetActivity(Application.Context, pendingIntentID++, new(Application.Context, typeof(BridgeActivity)), 0));
+        builder.SetContentIntent(PendingIntent.GetActivity(Application.Context, pendingIntentID++, new(Application.Context, typeof(BridgeActivity)), PendingIntentFlags.Immutable));
         builder.SetContentTitle(title);
         builder.SetContentText(desc);
         builder.SetSmallIcon(smallIcon < 0 ? Resource.Mipmap.ic_launcher : smallIcon);
@@ -42,7 +42,7 @@ public static class Notes
     public static void PushLooseNote(string title, string desc, Bitmap? largeIcon, int smallIcon, bool isOngoing)
     {
         notifMan?.Notify(notifyID++, new Notification.Builder(Application.Context, Application.Context.Resources?.GetString(Resource.String.app_notification_channel_id))
-            .SetContentIntent(PendingIntent.GetActivity(Application.Context, pendingIntentID++, new(Application.Context, typeof(BridgeActivity)), PendingIntentFlags.UpdateCurrent))
+            .SetContentIntent(PendingIntent.GetActivity(Application.Context, pendingIntentID++, new(Application.Context, typeof(BridgeActivity)), PendingIntentFlags.Immutable))
             .SetContentTitle(title)
             .SetContentText(desc)
             .SetSmallIcon(smallIcon < 0 ? Resource.Mipmap.ic_launcher : smallIcon)
